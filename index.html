@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        .top {
+            height: 500px;
+            background-attachment: scroll;
+            background: no-repeat top fixed url(images/background.jpeg);
+            z-index: 2;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+            background-color: #fff;
+            animation-duration: 1.2s;
+        }
+
+        hr {
+            width: 300px;
+            margin-bottom: 100px
+        }
+
+        .contener {
+            position: absolute;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            color: #ffffff;
+            font-size: 50px;
+        }
+
+        .back {
+
+            position: relative;
+            height: 500px;
+            background: #01d3f5d1;
+            opacity: 0.4;
+        }
+
+        .underlin {
+            text-decoration-line: underline;
+        }
+
+        .scrol-doun {
+            display: block;
+            height: 71px;
+            width: 77px;
+            position: absolute;
+            bottom: 20%;
+            right: 13%;
+            background: #727171;
+        }
+
+        #scrol {
+            color: #FFFFFF;
+            font-size: 30px;
+            padding-right: 2px;
+            padding-top: 20px;
+            animation-name: wiggle;
+            animation-duration: 1.2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #scrol::after {
+            content: " ";
+            /* box-sizing: border-box; */
+            color: white;
+            position: absolute;
+            left: 25px;
+            border-bottom: solid 7px;
+            border-right: solid 7px;
+            height: 26px;
+            width: 26px;
+            transform: rotate(42deg);
+        }
+
+        .test {
+            height: 1220px;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 20px;
+            /* right: 39px; */
+            /* width: 110px; */
+            z-index: 22;
+        }
+
+        .ui-nav {
+            opacity: 0.75;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            align-items: center;
+            color: black;
+            justify-content: space-between;
+            backdrop-filter: opacity(0.5);
+            background-color: #434242;
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 248, 248);
+            text-decoration-line: none;
+            margin-right: 27px;
+            font-size: 10px;
+
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        h2 {
+            font-weight: 300;
+            color: #22A39F;
+            font-size: 54px;
+        }
+
+        .lead {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        p .lead {
+            text-align: center;
+            color: #727878;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .text-roe {
+            width: 300px;
+        }
+
+        .image-roe {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 1px 1px 20px 2px #575556;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+
+            top: 600px;
+            left: 30px;
+        }
+
+        .abilities {
+            background-color: #e4dcbf;
+        }
+
+        a:hover {
+            color: #f4d146;
+        }
+
+        /* .img-project1
+    {
+        
+    } */
+        .project1:hover figcaption {
+            display: block;
+        }
+
+        .logome {
+            height: 50px;
+            color: #f4d146;
+        }
+
+        figcaption {
+
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background: rgb(109, 102, 102);
+            color: white;
+            display: none;
+            opacity: 0.6;
+        }
+
+        figure {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background-footer {
+            background-color: #434242;
+        }
+
+        .span-reight {
+            position: relative;
+            top: 4px;
+            height: 12px;
+            width: 40%;
+            background: #5c5a5d75;
+        }
+
+        .span-reight::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 90%;
+            background: #22a39f;
+        }
+
+        .icon {
+            display: inline-block;
+            background: url(images/download.png) no-repeat;
+            height: 32px;
+            width: 32px
+        }
+
+        .link-icon {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            align-content: center;
+            align-items: center;
+        }
+
+        .ul-abilities {
+            width: 300px;
+            list-style: none;
+        }
+
+        .span-left {
+            display: inline-block;
+            width: 60%;
+        }
+
+        .span-reight {
+            float: right;
+        }
+
+        .lum::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 70%;
+            background: #22a39f;
+        }
+
+        .lum {
+            position: relative;
+            top: 4px;
+            height: 12px;
+            width: 40%;
+            background: #5c5a5d75;
+            float: right;
+        }
+
+        .aout {
+            position: relative;
+            top: 4px;
+            height: 12px;
+            width: 40%;
+            background: #5c5a5d75;
+            float: right;
+        }
+
+        .aout::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 92%;
+            background: #22a39f;
+        }
+
+        .photo {
+            position: relative;
+            top: 4px;
+            height: 12px;
+            width: 40%;
+            background: #5c5a5d75;
+            float: right;
+        }
+
+        .photo::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 85%;
+            background: #22a39f;
+        }
+
+        .riv {
+            position: relative;
+            top: 4px;
+            height: 12px;
+            width: 40%;
+            background: #5c5a5d75;
+            float: right;
+        }
+
+        .riv::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 80%;
+            background: #22a39f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="contener">
+            <p>
+                <spam class="underlin">hasan</spam><br>dukki
+            </p>
+        </div>
+        <div class="back"></div>
+        <div class="scrol-doun">
+            <span id="scrol"></span>
+        </div>
+    </div>
+    <div class="navbar">
+        <ul class="ui-nav">
+            <div class="ul-li">
+                <li><a href="#Profile">Profile</a></li>
+            </div>
+            <li><a href="#abilities">abilitis</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#footer">footer</a></li>
+    </div>
+    </ul>
+    </div>
+    <div id="profile" class="profile">
+        <h2 style="text-align: center;" id="profile">Profile</h2>
+        <p class="lead" style="text-align: center;">I'm a creative PHP webdeveloper</p>
+        <hr>
+        <div class="row">
+            <div class="text-roe">
+                <h3>about me</h3>
+                <p>I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques.
+                    I love structure and order and I also stand for quality. I love spending time on fixing little
+                    details and optimizing web apps. Also I like working in a team, you'll learn faster and much more.
+                    As the saying goes: 'two heads are better than one'.</p>
+            </div>
+            <div class="image-roe"> <img src="images/hasanp.jpeg" width="200px" height="250px"></div>
+            <div class="nav-row">
+                <h2>Details</h2>
+                <p>
+                    <strong>Name:</strong><br>
+                    "ayham nassem ashram"<br>
+                    <strong>Age:</strong><br>
+                    "21 years"<br>
+                    <strong>location:</strong><br>
+                    "s-hertogenbosch, the netherlands, earth"
+                </p>
+                <iframe id="twetter"
+                    src="https://platform.twitter.com/widgets/follow_button.a53eecb4584348a2ad32ec2ae21f6eae.en.html#dnt=false&id=twitter-widget-0&lang=en&screen_name=pascalvgemert&show_count=false&show_screen_name=false&size=l&time=1636708300758"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="abilities" class="abilities center">
+        <div class="center">
+            <h2 style="font-size: 50px;text-align: center; ">
+                Abilities
+            </h2>
+            <p style="text-align: center;">
+                “Life without knowledge is death in<br> disguise.”<br> - Talib Kweli
+            </p>
+        </div>
+        <h2>skills</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="ul-abilities">
+                    <li>
+                        <span class="span-left">3Dmax</span>
+                        <span class="span-reight"></span>
+                    </li>
+                    <li>
+                        <span class="span-left">Lumion</span>
+                        <span class="lum"> </span>
+                    </li>
+                    <li>
+                        <span class="span-left">AoutoCAD</span>
+                        <span class="aout"></span>
+                    </li>
+                    <li>
+                        <span class="span-left">Photoshob</span>
+                        <span class="photo"></span>
+                    </li>
+                    <li>
+                        <span class="span-left">Rivt</span>
+                        <span class="riv"></span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="projects" class="projects">
+            <h2 style="text-align: center;">projects</h2>
+            <p>“You can do anything you set your mind to.”
+                - Benjamin Franklin</p>
+            <hr>
+            <div class="project1">
+                <figure class="efact">
+                    <img src="images/project-1.jpeg" class="img-project1" width="300px" height="250px">
+                    <figcaption>
+                        <h3> project bedroom</h3>
+                        <p>the project took 6 hours to complete</p>
+                        <p>
+                            <strong></strong>
+                            <hr>
+
+                        </p>
+                        <a href=""></a>
+                        <span></span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="project1">
+                <figure class="efact">
+                    <img src="images/project2.jpeg" class="img-project1" width="300px" height="250px">
+                    <figcaption>
+                        <h3> project bedroom </h3>
+                        <p>the project took 12 hours to complete</p>
+                        <p>
+                            <strong>use</strong>
+                            <hr>
+
+                        </p>
+                        <a href=""></a>
+                        <span></span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="project1">
+                <figure class="efact">
+                    <img src="images/project3.jpeg" class="img-project1" width="300px" height="250px">
+                    <figcaption>
+                        <h3> mals </h3>
+                        <p>the project took 14 hours to complete</p>
+                        <p>
+                            <strong></strong>
+                            <hr>
+
+                        </p>
+                        <a href=""></a>
+                        <span></span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="project1">
+                <figure class="efact">
+                    <img src="images/project4.jpeg" class="img-project1" width="300px" height="250px">
+                    <figcaption>
+                        <h3> mals </h3>
+                        <p>the project took 2 hours to complete.</p>
+                        <p>
+                            <strong></strong>
+                            <hr>
+
+                        </p>
+                        <a href=""></a>
+                        <span></span>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="project1">
+                <figure class="efact">
+                    <img src="images/project5.jpeg" class="img-project1" width="300px" height="250px">
+                    <figcaption>
+                        <h3> mals </h3>
+                        <p>the project took 2 hours to complete.</p>
+                        <p>
+                            <strong></strong>
+                            <hr>
+
+                        </p>
+                        <a href=""></a>
+                        <span></span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="background-footer">
+            <footer id="#footer">
+                <h2 style="text-align:center;color:white;">Contact</h2>
+                <p class="lead" style="color: #727878;text-align: center;">
+                    “If I had asked people what they wanted, they would have said faster horses. ”
+                    <br>
+                    - Henry Ford
+                </p>
+                <hr style="margin: 40px 0px;
+                   border-color: #727878;
+                   opacity: 0.2;">
+                <div class="row">
+                    <ul class="list-style: none;">
+                        <li>
+                            <a class="link-icon" href="https://www.facebook.com/hasan.dukki.562">
+                                <span><img src="images/download.png" width="25" alt=""></span>
+                                https://www.facebook.com/hasan.dukki.562
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-icon" href="http://twitter.com">
+                                <span><img src="images/twitter.png" width="25" alt=""></span>
+                                http://twitter.com
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-icon" href="http://gmail.com">
+                                <span><img src="images/gmail.png" width="25" alt=""></span>
+                                http://gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
+            <div class="logome">
+                ayham ashram
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+uplapse
+freepik
+dribble
+envato
+
