@@ -12,7 +12,7 @@
             line-height: 1.42857143;
             color: #333;
             background-color: #fff;
-            animation: all 0.5s;
+            animation-duration: 1.2s;
         }
 
         hr
@@ -52,7 +52,7 @@
             position: absolute;
             bottom: 20%;
             right: 13%;
-            background: black;
+            background: #727171;
         }
         #scrol
         {
@@ -100,6 +100,7 @@
             z-index: 22;
         }
         .ui-nav{
+            opacity: 0.75;
             height: 60px;
             display: flex;
             flex-direction: row;
@@ -109,7 +110,7 @@
             color: black;
             justify-content: space-between;
             backdrop-filter: opacity(0.5);
-            background-color: #000000;
+            background-color: #434242;
             list-style-type: none;
         }
         a{
@@ -161,7 +162,9 @@
 }
     .profile
     {
-        position: absolute;
+        display: flex;
+        flex-direction: column;
+       
         top: 600px;
         left: 30px;
     }
@@ -181,11 +184,15 @@
     {
         display: block;
     }
-
+    .logome
+    {
+        height: 50px;
+        color: #f4d146;
+    }
 
     figcaption
     {
-        padding: 20px 30px;
+        
         position: absolute;
         top: 0px;
         left: 0px;
